@@ -23,12 +23,12 @@ A modern authentication and profile management application built with Vue 3 and 
 
 ## Features 🚀
 
-🔐 Secure authentication system with password strength validation
-👤 Rich profile management with editable user details
-📸 Avatar upload with image validation and preview
-🎨 Modern UI powered by Tailwind CSS
-⚡ Lightning-fast performance with Vite
-💾 Persistent data storage with localStorage
+- 🔐 Secure authentication system with password strength validation
+- 👤 Rich profile management with editable user details
+- 📸 Avatar upload with image validation and preview
+- 🎨 Modern UI powered by Tailwind CSS
+- ⚡ Lightning-fast performance with Vite
+- 💾 Persistent data storage with localStorage
 
 Built using Vue 3 Composition API for optimal performance and maintainability, featuring real-time form validation and a sleek design.
 
