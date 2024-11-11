@@ -4,7 +4,7 @@
 
 A modern authentication and profile management application built with Vue 3 and Tailwind CSS. Features a secure login system with real-time validation, comprehensive profile management with avatar upload support, and a responsive design that works seamlessly across all devices.
 
-### [Check the Live Demo](https://subbotinroman.github.io/TodoApp-Vue.JS/) 👈
+### [Check the Live Demo](https://subbotinroman.github.io/AuthorizationApp-Vue.JS/) 👈
 
 <img alt="ToDo-List preview" src="public/preview-1.png">
 <img alt="ToDo-List preview" src="public/preview-2.png">

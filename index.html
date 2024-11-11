@@ -1,10 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuthorizationApp-Vue.JS</title>
+    <script type="text/javascript">
+      // Этот скрипт обрабатывает редирект с 404.html
+      (function(l) {
+        // Проверяем, был ли редирект (в URL есть /?/)
+        if (l.search[1] === '/') {
+          // Восстанавливаем исходный путь из параметров URL
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          
+          // Заменяем URL на правильный, без лишних параметров
+          window.history.replaceState(
+            null, 
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
   </head>
   <body>
     <div id="app"></div>

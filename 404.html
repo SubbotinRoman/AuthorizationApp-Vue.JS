@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AuthorizationApp-Vue.JS</title>
+    <script type="text/javascript">
+      // Количество сегментов пути, которые нужно сохранить (1 = имя репозитория)
+      var pathSegmentsToKeep = 1;
+
+      // Получаем текущий URL
+      var l = window.location;
+      
+      // Перенаправляем на главную страницу, сохраняя путь
+      // Например: /AuthorizationApp-Vue.JS/login -> /AuthorizationApp-Vue.JS/?/login
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
