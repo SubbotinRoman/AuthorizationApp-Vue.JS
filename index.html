@@ -5,33 +5,26 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AuthorizationApp-Vue.JS</title>
+    <script>
+      // Этот скрипт выполняется до загрузки Vue приложения
+      ;(function () {
+        // Получаем сохраненный URL из sessionStorage
+        const redirect = sessionStorage.redirect
+        // Очищаем sessionStorage
+        delete sessionStorage.redirect
 
-    <!-- Скрипт для обработки маршрутизации на GitHub Pages -->
-    <script type="text/javascript">
-      // Немедленно вызываемая функция с параметром текущего URL
-      ;(function (l) {
-        // Проверяем, пришли ли мы после редиректа с 404.html
-        // В этом случае в URL будет '/?/' после имени репозитория
-        if (l.search[1] === '/') {
-          // Получаем оригинальный путь из параметров URL
-          // Заменяем временные ~and~ обратно на &
-          var decoded = l.search
-            .slice(1)
-            .split('&')
-            .map(function (s) {
-              return s.replace(/~and~/g, '&')
-            })
-            .join('?')
-
-          // Восстанавливаем оригинальный URL без лишних параметров
-          // Например: /?/login -> /login
-          window.history.replaceState(
-            null, // данные для истории
-            null, // заголовок страницы
-            l.pathname.slice(0, -1) + decoded + l.hash, // новый URL
+        // Если есть сохраненный URL и он отличается от текущего
+        if (redirect && redirect !== location.href) {
+          // Извлекаем путь после имени репозитория
+          // Например, из /AuthorizationApp-Vue.JS/login получаем /login
+          const path = redirect.substring(
+            redirect.indexOf('/AuthorizationApp-Vue.JS/') + '/AuthorizationApp-Vue.JS/'.length,
           )
+
+          // Заменяем текущий URL на правильный, без перезагрузки страницы
+          history.replaceState(null, null, path)
         }
-      })(window.location)
+      })()
     </script>
   </head>
   <body>

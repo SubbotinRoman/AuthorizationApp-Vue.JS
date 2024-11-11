@@ -3,34 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <title>AuthorizationApp-Vue.JS</title>
-    <script type="text/javascript">
-      // Количество сегментов пути, которые нужно сохранить (1 = имя репозитория)
-      var pathSegmentsToKeep = 1
-
-      // Получаем текущий URL
-      var l = window.location
-
-      // Перенаправляем на главную страницу, сохраняя путь
-      l.replace(
-        l.protocol +
-          '//' +
-          l.hostname +
-          (l.port ? ':' + l.port : '') +
-          l.pathname
-            .split('/')
-            .slice(0, 1 + pathSegmentsToKeep)
-            .join('/') +
-          '/?/' +
-          l.pathname
-            .slice(1)
-            .split('/')
-            .slice(pathSegmentsToKeep)
-            .join('/')
-            .replace(/&/g, '~and~') +
-          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-          l.hash,
-      )
+    <script>
+      // Сохраняем текущий URL в sessionStorage
+      // Это нужно, чтобы после редиректа на главную страницу
+      // мы могли восстановить изначальный URL
+      sessionStorage.redirect = location.href
     </script>
+    <!-- Редирект на главную страницу приложения -->
+    <!-- Число 0 означает мгновенный редирект -->
+    <meta http-equiv="refresh" content="0;URL='/AuthorizationApp-Vue.JS/'" />
   </head>
-  <body></body>
+  <body>
+    <!-- Сообщение для пользователей с отключенным JavaScript -->
+    Перенаправление на главную страницу...
+  </body>
 </html>
