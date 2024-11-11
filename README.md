@@ -30,8 +30,6 @@ A modern authentication and profile management application built with Vue 3 and 
 - ⚡ Lightning-fast performance with Vite
 - 💾 Persistent data storage with localStorage
 
-Built using Vue 3 Composition API for optimal performance and maintainability, featuring real-time form validation and a sleek design.
-
 ---
 
 ## How to run locally
