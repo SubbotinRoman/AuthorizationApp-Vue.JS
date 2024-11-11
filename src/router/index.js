@@ -5,7 +5,7 @@ import ProfileView from '@/views/Profile.vue'
 // Настройка навигации по сайту
 const router = createRouter({
   // Включаем красивые адреса страниц без # в адресе
-  history: createWebHistory(),
+  history: createWebHistory('/AuthorizationApp-Vue.JS/'),
   // Описываем все страницы сайта
   routes: [
     {
