@@ -1,19 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>AuthorizationApp-Vue.JS</title>
     <script>
-      const repoName = 'AuthorizationApp-Vue.JS';
-      const pagePath = window.location.pathname;
-      const redirectPath = pagePath.includes(repoName) 
+      // Имя репозитория на GitHub
+      const repoName = 'AuthorizationApp-Vue.JS'
+
+      // Получаем текущий путь из URL
+      // Например: /AuthorizationApp-Vue.JS/login -> /login
+      const pagePath = window.location.pathname
+
+      // Извлекаем путь после имени репозитория
+      // Если URL содержит имя репозитория, убираем его и всё что до него
+      // Если нет - используем весь путь
+      const redirectPath = pagePath.includes(repoName)
         ? pagePath.substring(pagePath.indexOf(repoName) + repoName.length)
-        : pagePath;
-        
-      window.location.href = `/${repoName}/#${redirectPath}`;
+        : pagePath
+
+      // Перенаправляем на тот же путь, но с использованием hash-маршрутизации
+      // Например: /login -> /#/login
+      window.location.href = `/${repoName}/#${redirectPath}`
     </script>
   </head>
   <body>
-    <p>Redirecting...</p>
+    <!-- Сообщение для пользователей с отключенным JavaScript -->
+    <p>Перенаправление на главную страницу...</p>
   </body>
 </html>
