@@ -1,36 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AuthorizationApp-Vue.JS</title>
-    <script>
-      // Этот скрипт выполняется до загрузки Vue приложения
-      ;(function () {
-        // Получаем сохраненный URL из sessionStorage
-        const redirect = sessionStorage.redirect
-        // Очищаем sessionStorage
-        delete sessionStorage.redirect
-
-        // Если есть сохраненный URL и он отличается от текущего
-        if (redirect && redirect !== location.href) {
-          // Извлекаем путь после имени репозитория
-          // Например, из /AuthorizationApp-Vue.JS/login получаем /login
-          const path = redirect.substring(
-            redirect.indexOf('/AuthorizationApp-Vue.JS/') + '/AuthorizationApp-Vue.JS/'.length,
-          )
-
-          // Заменяем текущий URL на правильный, без перезагрузки страницы
-          history.replaceState(null, null, path)
-        }
-      })()
-    </script>
   </head>
   <body>
     <!-- Корневой элемент для Vue приложения -->
     <div id="app"></div>
-    <!-- Точка входа в приложение -->
+     <!-- Точка входа в приложение -->
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
