@@ -1,33 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AuthorizationApp-Vue.JS</title>
+
+    <!-- Скрипт для обработки маршрутизации на GitHub Pages -->
     <script type="text/javascript">
-      // Этот скрипт обрабатывает редирект с 404.html
-      (function(l) {
-        // Проверяем, был ли редирект (в URL есть /?/)
+      // Немедленно вызываемая функция с параметром текущего URL
+      ;(function (l) {
+        // Проверяем, пришли ли мы после редиректа с 404.html
+        // В этом случае в URL будет '/?/' после имени репозитория
         if (l.search[1] === '/') {
-          // Восстанавливаем исходный путь из параметров URL
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          
-          // Заменяем URL на правильный, без лишних параметров
+          // Получаем оригинальный путь из параметров URL
+          // Заменяем временные ~and~ обратно на &
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&')
+            })
+            .join('?')
+
+          // Восстанавливаем оригинальный URL без лишних параметров
+          // Например: /?/login -> /login
           window.history.replaceState(
-            null, 
-            null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-          );
+            null, // данные для истории
+            null, // заголовок страницы
+            l.pathname.slice(0, -1) + decoded + l.hash, // новый URL
+          )
         }
-      }(window.location))
+      })(window.location)
     </script>
     <script type="module" crossorigin src="/AuthorizationApp-Vue.JS/assets/index-oKUfyx0P.js"></script>
     <link rel="stylesheet" crossorigin href="/AuthorizationApp-Vue.JS/assets/index-BJlIOZy_.css">
   </head>
   <body>
+    <!-- Корневой элемент для Vue приложения -->
     <div id="app"></div>
+    <!-- Точка входа в приложение -->
   </body>
 </html>
